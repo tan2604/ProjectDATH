@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[MainController::class, 'home']);
+Route::get('/about',[MainController::class, 'about']);
+Route::get('/blog',[MainController::class, 'blog']);
+Route::get('/contact',[MainController::class, 'contact']);
+Route::get('/shop',[MainController::class, 'shop']);
+Route::get('/shop-fillter',[MainController::class, 'fillter']);
+
+//admin
+
+Route::get('/admin', [AdminController::class, 'dashboard']);
+Route::get('/login', [AdminController::class, 'login']);
+Route::get('/forgot-password', [AdminController::class, 'forgot']);

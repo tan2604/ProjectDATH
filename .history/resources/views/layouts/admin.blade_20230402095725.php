@@ -8,9 +8,7 @@
 <body id="page-top">
     <!-- Content Wrapper -->
     <div id="wrapper">
-        @include('admin.layouts.sidebar')
         <div id="content-wrapper" class="d-flex flex-column">
-            @include('admin.layouts.topbar')
 
             <!-- Main Content -->
             <div id="content">
@@ -19,7 +17,7 @@
                 <div class="container-fluid">
 
                     @yield('admin_content')
-                    @if(isset($slot)) $slot @endif
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -27,7 +25,13 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('admin.layouts.footer')
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                </div>
+            </footer>
             <!-- End of Footer -->
 
         </div>

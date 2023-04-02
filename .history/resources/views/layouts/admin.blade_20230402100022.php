@@ -19,7 +19,7 @@
                 <div class="container-fluid">
 
                     @yield('admin_content')
-                    @if(isset($slot)) $slot @endif
+
                 </div>
                 <!-- /.container-fluid -->
 

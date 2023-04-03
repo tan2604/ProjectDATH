@@ -8,19 +8,16 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->unsigned();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('description',1000)->nullable();
-            $table->text('content')->nullable();
-            $table->integer('price');
-            $table->integer('discount')->nullable();
-            $table->string('sku');
+            $table->integer('parent_id')->unsigned();
             $table->boolean('featured')->default(1);
             $table->timestamps();
         });
@@ -28,9 +25,11 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('categories');
     }
 };

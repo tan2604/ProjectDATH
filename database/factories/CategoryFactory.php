@@ -17,7 +17,7 @@ class CategoryFactory extends Factory
     public function definition()
     {
         $name = $this->faker->unique()->word();
-        $slug = Str::slug($name, '-');
+        $slug = \Str::slug($name, '-');
         return [
             'name' => $name,
             'slug' => $slug,

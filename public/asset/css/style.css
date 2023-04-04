@@ -11,8 +11,8 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
 /*****----------------------------------------
-     1) font-family: 'Rajdhani', sans-serif;  
-     2) font-family: 'Poppins', sans-serif; 
+     1) font-family: 'Rajdhani', sans-serif;
+     2) font-family: 'Poppins', sans-serif;
 ----------------------------------------*****/
 
 
@@ -43,7 +43,7 @@ html {
 body {
 	color: #666666;
 	font-size: 14px;
-	font-family: 'poppins', sans-serif;
+	font-family: 'Montserrat', sans-serif;
 	line-height: 1.80857;
 	font-weight: normal;
 	overflow-x: hidden;
@@ -1639,7 +1639,7 @@ input[type="radio"] .styled:checked+label::after {
 
 
 /*---------------------------------------------------------------------
-    layout new css 
+    layout new css
 ---------------------------------------------------------------------*/
 
 .right_header_info {
@@ -1739,7 +1739,7 @@ input[type="radio"] .styled:checked+label::after {
 .center {
 	display: flex;
 	justify-content: center;
-	
+
 }
 
 #slider_main {
@@ -1870,7 +1870,7 @@ color: #fff;
     width: 25px;
     height: 25px;
     border-radius: 30px;
-} 
+}
 
 .carousel-indicators {margin-bottom: -50px;}
 
@@ -2040,7 +2040,7 @@ padding-right: 250px;
 padding-bottom: 40px;
 padding-top: 39px;
 background: #f0efef;
-} 
+}
 
 .form-control {
      border: #fff solid 2px;
@@ -2064,11 +2064,11 @@ background: #f0efef;
      width: 100%;
      padding-top: 40px;
      box-shadow: #ddd 0px 0px 11px 4px;
-} 
+}
 
 .send {
      font-family: poppins;
-    
+
     margin: 0 auto;
     display: block;
     background: #000;
@@ -2089,7 +2089,8 @@ background: #f0efef;
 
 .footer {
 	background: #01312e;
-    padding-top: 90px;
+    padding-top: 60px;
+		margin-top: 60px;
 }
 ul.sociel {
 	display: flex;
@@ -2116,7 +2117,7 @@ font-size: 18px;
 
   ul.sociel li a:hover {color: #d2390a;}
 .contact {
-	margin-top: 90px;
+	margin-top: 50px;
 }
 
 .contact h3 {
@@ -2171,7 +2172,7 @@ color: #fff;
 .copyright {
 	background-color: #023f3b;
 	padding: 20px 0px;
-	margin-top: 90px;
+	margin-top: 60px;
 }
 
 .copyright p {
@@ -2194,12 +2195,12 @@ color: #fff;
 /*---------------------------------------------------------------------
     ener page css
 ---------------------------------------------------------------------*/
-.contact_page .contact {margin-top: 0px;}  
+.contact_page .contact {margin-top: 0px;}
 .contactus .title h2 {
 	font-weight: bold;
 	color: #fff;
-font-weight: 500; 
-	
+font-weight: 500;
+
 }
 
 
@@ -2208,7 +2209,7 @@ font-weight: 500;
      padding: 50px 0px;
 }
 .contactus .title {
- padding-bottom: 0px;   
+ padding-bottom: 0px;
 text-align: center;
 }
 
@@ -2267,7 +2268,7 @@ margin-top: 35px;
      margin: 0;
 }
  .blog .news-box figure img {
-     width: 100%; height: 350px; 
+     width: 100%; height: 350px;
 }
  .blog .news-box h3 {
      font-size: 22px;
@@ -2295,7 +2296,7 @@ margin-top: 35px;
 /** product **/
 .product {
     padding: 0 0 30px;
-    
+
 }
 
 .product_style_3 .product_img {
@@ -2409,7 +2410,7 @@ margin-top: 35px;
 /** end product **/
 
 /** product_detail3 **/
-.layout_padding-2 {margin: 90px 0px 45px 0px;} 
+.layout_padding-2 {margin: 90px 0px 45px 0px;}
 .img_box {
 border: solid #ddd 3px;
 width: 98.2%;

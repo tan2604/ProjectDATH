@@ -151,7 +151,7 @@
             @foreach($new_products as $new_product)
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 margintop">
                 <div class="brand-box">
-                    <i><img src="{{asset('asset/images/products/' . $new_product->images[0]->path)}}" /></i>
+                    <i><img src="{{asset('asset/images/products/')}}" /></i>
                     <h3>{{$new_product->name}}</h3>
                     <span class="new-price">{{$new_product->price}}</span>
                 </div>

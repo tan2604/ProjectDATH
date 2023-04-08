@@ -20,6 +20,7 @@ return new class extends Migration
             $table->text('content')->nullable();
             $table->integer('price');
             $table->integer('discount')->nullable();
+            $table->string('image');
             $table->string('sku');
             $table->boolean('featured')->default(1);
             $table->timestamps();

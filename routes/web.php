@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -24,6 +25,12 @@ Route::get('about', [MainController::class,'about'])->name('about');
 Route::get('contact', [MainController::class,'contact'])->name('contact');
 Route::get('shop', [MainController::class,'shop'])->name('shop');
 Route::get('shop/{slug}.html', [MainController::class,'product'])->name('product');
+Route::post('filter', [MainController::class,'filter'])->name('filter');
+Route::get('cart', [CartController::class,'cart'])->name('cart');
+Route::get('checkout', [CartController::class,'checkout'])->name('checkout');
+Route::post('store-cart', [CartController::class,'storeCart'])->name('store-cart');
+Route::post('update-cart', [CartController::class,'updateCart'])->name('update-cart');
+Route::post('delete-cart', [CartController::class,'deleteCart'])->name('delete-cart');
 
 
 //Admin
@@ -47,13 +54,6 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
     Route::get('delete/{id}', 'delete')->name('category.delete');
 });
 
-Route::get('admin/orders/index', [OrdersController::class, 'index']);
-Route::get('admin/order/detail/{id}', [OrdersController::class, 'detail']);
-
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

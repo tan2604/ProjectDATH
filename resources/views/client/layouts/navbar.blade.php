@@ -24,7 +24,7 @@
                         </a>
                     </li> --}}
                     <li>
-                        <a href="#">
+                        <a href="{{route('cart')}}">
                             <img style="margin-right: 15px;" src="{{asset('asset/images/icon/3.png')}}" alt="#" />
                         </a>
                     </li>

@@ -1,6 +1,6 @@
 <footer>
-    <div class="footer">
-        <div class="container-fluid">
+    <div class="footer" style="padding-top:0 ">
+        {{-- <div class="container-fluid">
             <div class="border1">
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
@@ -35,7 +35,7 @@
 
 
             </div>
-        </div>
+        </div> --}}
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -79,6 +79,9 @@
 <script src="{{asset('asset/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
 <script src="{{asset('asset/js/custom.js')}}"></script>
 <script src="{{asset('asset/https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
+</script>
 <script type="text/javascript">
     $(document).ready(function() {
 $("#sidebar").mCustomScrollbar({

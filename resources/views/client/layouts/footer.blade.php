@@ -1,4 +1,3 @@
-
 <footer>
     <div class="footer">
         <div class="container-fluid">
@@ -13,11 +12,13 @@
 
 
                         <ul class="lik">
-                            <li> <a href="index.html">Home</a></li>
-                            <li> <a href="about.html">About</a></li>
-                            <li> <a href="product.html">Product</a></li>
-                            <li> <a href="blog.html">Blog</a></li>
-                            <li> <a href="contact.html">Contact us</a></li>
+                            <li> <a href="/">Trang chủ</a></li>
+                            <li> <a href="{{route('about')}}">Giới thiệu</a></li>
+                            <li> <a href="{{route('shop')}}">Cửa hàng</a></li>
+                            <li> <a href="{{route('contact')}}">Liên hệ</a></li>
+                            @if(auth()->check())
+                            <li> <a href="{{route('logout')}}">Đăng xuất</a></li>
+                            @endif
                         </ul>
                     </div>
 
@@ -48,7 +49,8 @@
                 </div>
                 <div class="col-md-12">
                     <div class="newtt">
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point<br> of using Lorem I</p>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a
+                            page when looking at its layout. The point<br> of using Lorem I</p>
                     </div>
                 </div>
             </div>
@@ -78,7 +80,7 @@
 <script src="{{asset('asset/js/custom.js')}}"></script>
 <script src="{{asset('asset/https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js')}}"></script>
 <script type="text/javascript">
-$(document).ready(function() {
+    $(document).ready(function() {
 $("#sidebar").mCustomScrollbar({
     theme: "minimal"
 });
@@ -89,7 +91,7 @@ $('#dismiss, .overlay').on('click', function() {
 });
 
 $('#sidebarCollapse').on('click', function() {
-    $('#sidebar').addClass('active');
+    $('#sidebar').toggleClass('active');
     $('.overlay').addClass('active');
     $('.collapse.in').toggleClass('in');
     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
@@ -99,7 +101,7 @@ $('#sidebarCollapse').on('click', function() {
 
 
 <script>
-$(document).ready(function() {
+    $(document).ready(function() {
 $(".fancybox").fancybox({
     openEffect: "none",
     closeEffect: "none"
@@ -114,3 +116,5 @@ $(".zoom").hover(function() {
 });
 });
 </script>
+@stack('scripts')
+<livewire:scripts />

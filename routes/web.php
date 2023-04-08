@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrdersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,15 +19,46 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/',[MainController::class, 'home']);
-Route::get('/about',[MainController::class, 'about']);
-Route::get('/blog',[MainController::class, 'blog']);
-Route::get('/contact',[MainController::class, 'contact']);
-Route::get('/shop',[MainController::class, 'shop']);
-Route::get('/shop-fillter',[MainController::class, 'fillter']);
+Route::get('/', [MainController::class,'home'])->name('home');
+Route::get('about', [MainController::class,'about'])->name('about');
+Route::get('contact', [MainController::class,'contact'])->name('contact');
+Route::get('shop', [MainController::class,'shop'])->name('shop');
+Route::get('shop/{slug}.html', [MainController::class,'product'])->name('product');
 
-//admin
 
-Route::get('/admin', [AdminController::class, 'dashboard']);
-Route::get('/login', [AdminController::class, 'login']);
-Route::get('/forgot-password', [AdminController::class, 'forgot']);
+//Admin
+Route::get('admin',[AdminController::class, 'dashboard']);
+
+Route::controller(ProductController::class)->prefix('product')->group(function () {
+    Route::get('', 'index')->name('product');
+    Route::get('add', 'add')->name('product.add');
+    Route::post('add', 'save')->name('product.save');
+    Route::get('edit/{id}', 'edit')->name('product.edit');
+    Route::post('edit/{id}', 'update')->name('product.update');
+    Route::get('delete/{id}', 'delete')->name('product.delete');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->group(function () {
+    Route::get('', 'index')->name('category');
+    Route::get('add', 'add')->name('category.add');
+    Route::post('save', 'save')->name('category.save');
+    Route::get('edit/{id}', 'edit')->name('category.edit');
+    Route::post('edit/{id}', 'update')->name('category.update');
+    Route::get('delete/{id}', 'delete')->name('category.delete');
+});
+
+Route::get('admin/orders/index', [OrdersController::class, 'index']);
+Route::get('admin/order/detail/{id}', [OrdersController::class, 'detail']);
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';

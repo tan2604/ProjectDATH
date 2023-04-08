@@ -23,6 +23,12 @@
                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
                         </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" class="form-control form-control-user"
+                                placeholder="Số điện thoại">
+                            <x-input-error :messages="$errors->get('phone')" class="mt-2" />
+
+                        </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="password" name="password" class="form-control form-control-user"

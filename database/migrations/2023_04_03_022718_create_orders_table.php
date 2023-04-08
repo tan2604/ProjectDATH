@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id')->unsigned();
+            $table->string('name', 50);
+            $table->string('phone', 10);
+            $table->string('address', 100);
             $table->string('code',10);
             $table->string('status',50)->default('Chờ xác nhận');
             $table->string('note')->nullable();;

@@ -6,7 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Client\CartController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrdersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,23 @@ Route::post('delete-cart', [CartController::class,'deleteCart'])->name('delete-c
 //Admin
 Route::get('admin',[AdminController::class, 'dashboard']);
 
+Route::controller(ProductController::class)->prefix('product')->group(function () {
+    Route::get('', 'index')->name('product');
+    Route::get('add', 'add')->name('product.add');
+    Route::post('add', 'save')->name('product.save');
+    Route::get('edit/{id}', 'edit')->name('product.edit');
+    Route::post('edit/{id}', 'update')->name('product.update');
+    Route::get('delete/{id}', 'delete')->name('product.delete');
+});
+
+Route::controller(CategoryController::class)->prefix('category')->group(function () {
+    Route::get('', 'index')->name('category');
+    Route::get('add', 'add')->name('category.add');
+    Route::post('save', 'save')->name('category.save');
+    Route::get('edit/{id}', 'edit')->name('category.edit');
+    Route::post('edit/{id}', 'update')->name('category.update');
+    Route::get('delete/{id}', 'delete')->name('category.delete');
+});
 
 
 Route::middleware('auth')->group(function () {
